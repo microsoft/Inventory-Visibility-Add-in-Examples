@@ -1,14 +1,12 @@
-# Project
+# Inventory Visibility Add-in Examples
 
-> This repo has been populated by an initial template to help get you started. Please
-> make sure to update the content to build a great experience for community-building.
+This repository contains the following examples: 
 
-As the maintainer of this project, please make a few updates:
+1. Sample of API test cases written in [Playwright](https://playwright.dev/)
+2. Power platform related integration examples
+3. X++ code examples for Dynamics 365 Supply Chain Management related extension references
 
-- Improving this README.MD file to provide a great experience
-- Updating SUPPORT.MD with content about this project's support experience
-- Understanding the security reporting process in SECURITY.MD
-- Remove this section from the README
+The scope of this repository is to provide and share use cases for Inventory Visibility Add-in. Please contact Microsoft Support directly for production related issues. 
 
 ## Contributing
 
