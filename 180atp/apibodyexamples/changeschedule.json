@@ -1,0 +1,23 @@
+{
+    "id": "id-bike-0001",
+    "organizationId": "usmf",
+    "productId": "Bike",
+    "quantitiesByDate": {
+        "2023-09-08": {
+            "iv": {
+                "ordered": 10
+            }
+        },
+        "2023-10-01": {
+            "pos": {
+                "inbound": 20
+            }
+        }
+    },
+    "dimensions": {
+        "siteId": "1",
+        "locationId": "11",
+        "colorId": "red",
+        "sizeId": "small"
+    }
+}

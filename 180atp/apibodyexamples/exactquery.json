@@ -1,0 +1,26 @@
+{
+    "filters": {
+        "organizationId": [
+            "usmf"
+        ],
+        "productId": [
+            "Bike"
+        ],
+        "dimensions": [
+            "SiteId",
+            "LocationId"
+        ],
+        "values": [
+            [
+                "1",
+                "11"
+            ]
+        ]
+    },
+    "groupByValues": [
+        "ColorId",
+        "SizeId"
+    ],
+    "returnNegative": true,
+    "QueryATP": true
+}
