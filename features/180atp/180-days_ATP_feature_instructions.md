@@ -18,8 +18,10 @@ To turn on the 180-days ATP feature, follow these steps:
 
 <div style="background-color: #e6f3ff; padding: 10px; border-radius: 10px;">
 <strong>Tips:</strong><br>
-180-days ATP is only supported when entity version is 2.<br>
-If you are using Legacy UI, we will soon provide a help doc about how to upgrade your entity version and migrate your ATP configuration.
+1. 180-days ATP is only supported when entity version is 2.<br>
+If you are using Legacy UI, we will soon provide a help doc about how to upgrade your entity version and migrate your ATP configuration.<br>
+<br>
+2. Please note that the 7-day ATP and 180-days ATP features are separate and independent from each other. Any schedule changes created or modified using the 7-day ATP feature will not take effect when the 180-day ATP feature is turned on.
 </div>
 
 ## Configuring the feature
@@ -30,14 +32,18 @@ There are three settings you should configure for the ATP feature:
    This is how long you can schedule changes for. The maximum value for this field is 180 days.  
    By default, it is set to 30 days, which means you can schedule changes for up to 30 days from today.
 
-2. Schedule Measures:
+2. Schedule Measures: <br>
    Schedule Measures could be an existing calculated measure or you can create a new calculated measure.  
-   The ATP value will be provided for defined calculated measures, based on the future changes of component physical measures. 
+   The ATP value will be provided for defined calculated measures, based on the scheduled changes of component physical measures.
+
+   <img src="./Schedule%20Measures.png" alt="Schedule Measures Configuration" style="width:85%">  
 
 3. ATP Index Set Configuration:  
    This setting is similar to the "Product Index Hierarchy" which allows you to group your query results by specific dimensions.  
    For example, if you set ColorId and SizeId as your ATP Index Set, your query results will be grouped by color and size.  
    It is allowed to have multiple index sets.
+
+   <img src="./ATP%20Index%20Set%20Configuration.png" alt="ATP Index Set Configuration" style="width:85%">
 
 ## Related Api and Examples
 
@@ -73,10 +79,11 @@ Path	|Method|	Description | Example
 <br>
 
 <div style="background-color: #e6f3ff; padding: 10px; border-radius: 10px;">
-<strong>Tips:</strong><br>
-GroupByValues is very important for querying 180-days ATP.<br>
-As the data with date is structrued and organized by index set, so when query you <strong>must use one of your index sets in the GroupByValues</strong> section of your query.<br>
-When you have multiple index sets, you can query by any of them.
+<strong>Tips: How to query 180-days ATP</strong><br>
+The scheduled changes are structured and organized by index set, so you <strong>must use one of your index sets in the GroupByValues</strong> section of your query.<br>
+Please note this has to be perfect match, thus do not add or miss dimensions to avoid query failure. <br>
+When you have multiple index sets, you can query by any of them. But do not mix. <br>
+<strong>Filters section should only contain dimensions from Partition Configuration and ATP Index Set Configuration.</strong>
 </div>
 
 ## Query On UI & Result Example

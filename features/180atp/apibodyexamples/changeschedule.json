@@ -21,3 +21,12 @@
         "sizeId": "small"
     }
 }
+
+
+
+{
+    "id": "ohcs~id-bike-0001",
+    "processingStatus": "success",
+    "message": "",
+    "statusCode": 200
+}

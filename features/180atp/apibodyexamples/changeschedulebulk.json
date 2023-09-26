@@ -36,3 +36,26 @@
         }
     }
 ]
+
+
+{
+    "success": [
+        {
+            "id": "ohcs~id-bike-0001",
+            "processingStatus": "success",
+            "message": "",
+            "statusCode": 200
+        },
+        {
+            "id": "ohcs~id-car-0002",
+            "processingStatus": "success",
+            "message": "",
+            "statusCode": 200
+        }
+    ],
+    "failure": [],
+    "conflict": [],
+    "notFound": [],
+    "partialSuccess": [],
+    "unknown": []
+}
