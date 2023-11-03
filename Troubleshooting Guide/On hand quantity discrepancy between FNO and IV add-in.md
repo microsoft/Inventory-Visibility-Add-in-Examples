@@ -10,7 +10,9 @@ This page will provide the guide to troubleshoot and fix the known on hand quant
 
     - Check the query parameters, especially the OrganizationId, SiteId, LocationId, ProductId. If you enter incorrect query filter values, the Inventory service will return empty result if IV cannot find it.
     - Please make sure that the endpoint used in the IV PowerApps and in FNO IV parameters page are the same one, otherwise you may get unexpected quantity discrepancy issue. This is because that IV needs to make sure all requests are sent to the same cache instance in the same island at the same time.
-    - Pleae check FNO IV Batch Job page, to see whether the records needed to post to IV has decreased to 0, if it doesn't decrease, which means that all on hand change requests from FNO failed to sync to IV, so the query result in IV will be empty. You need to check whether you use correct endpoint in FNO to make sure that on hand change requests can be synced to IV from FNO side successfully.
+    - Pleae check FNO IV Batch Job page, to see whether the records to be posted to IV has decreased to 0, if it doesn't decrease, which means that all on hand change requests from FNO failed to sync to IV, so the query result in IV will be empty. You need to check whether you use correct endpoint in FNO to make sure that on hand change requests can be synced to IV from FNO side successfully.
+
+![records to be posted to IV has decreased to 0](media/to-be-posted-records.png)
 
 ## Only four fields(AvailOrdered, AvailPhysical, ReservOrdered, ReservPhysical) on hand results are incorrect
 
@@ -19,8 +21,9 @@ If you find that only some items have quantity discrepancy issue and the quantit
 **Solution**
 
 1. If you don't enable Advance WHS feature before, please follow the public document [Inventory Visibility support for WMS items](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-whs-support) to enable WHS feature.
-1. If you have already enabled advance WHS feateure in FNO side, please go to FNO side to check FNO IV Batch Job page, to see whether the WHS records needed to post IV has decreased to 0. If it doesn't decrease, it most likely is caused by that Advanced WHS Feature in IV Service side doesn't enable correctly. Please go to IV PowerApps side Feature management page, to enable Advanced WHS feature, please remember to **click update configuration button to make it take effect**. If you only turn on the Advanced WHS feature in Feature management page, but without updating the configuration, it will only change the draft configuration, the configuration changes will not take effect in service side.
+1. If you have already enabled advance WHS feature in FNO side, please go to FNO side to check FNO IV Batch Job page（**Inventory Management \> Periodic Tasks \> Inventory Visibility integration**）, to see whether the WHS records to be posted to IV has decreased to 0. If it doesn't decrease, it most likely is caused by that Advanced WHS Feature in IV Service side is not enabled correctly. Please go to IV PowerApps side Feature management page, to enable Advanced WHS feature, please remember to **click update configuration button to make it take effect**. If you only turn on the Advanced WHS feature in Feature management page, but without updating the configuration, it will only change the draft configuration, the configuration changes will not take effect in service side.
 1. If you have already enabled Advance WHS feature both in FNO and IV side, and the WHS records has decreased to 0, but you still face the quantity discrepancy issue. This maybe be caused by some known issues, which we have published the hotfix, please check and apply the hotfix in your environment.
+
 
 ### some WHS feature related hotfix for FNO side
 
