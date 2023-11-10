@@ -12,4 +12,17 @@ Issues related to [installation](./Installation%20issue.md) of Inventory Visibil
 
 ## General issue
 
+- [Unauthorized / token](./401%20unauthorized%20invalid%20token%20issue.md)
+- [Quantity descripancy](./On%20hand%20quantity%20discrepancy%20between%20FNO%20and%20IV%20add-in.md)
+
 ## Feature specific issue
+
+Below are guides for invididual features
+
+## FnO-related Hotfixes
+
+Due to different release cycles, you may need to find a hotfix for FnO. 
+
+## Other ongoing issues
+
+Below are up-to-date known issues with estimated resolve time. Normally monthly release takes place in the first Friday after 15-th of each month. 
