@@ -31,4 +31,4 @@ Due to different release cycles, you may need to find a hotfix for FnO.
 
 # 5. Other ongoing issues
 
-Below are up-to-date known issues with estimated resolve time. Normally, the monthly release takes place on the first Friday after the 15th of each month.
+Below are known ongoing issues to be fixed. Normally, the monthly release takes place on the first Friday after the 15th of each month.
