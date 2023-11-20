@@ -21,6 +21,6 @@ Make sure to understand these changes before proceeding the preview.
 
 See a comprehensive list of API usage reference below: 
 
-[Without Partition by Product](../tests/21_partitionByDimension.spec.ts)
+[Without Partition by Product](../ivtests/tests/21_partitionByDimension.spec.ts)
 
-[With Partition by product](../tests/22_partitionByProduct.spec.ts)
+[With Partition by product](../ivtests/tests/22_partitionByProduct.spec.ts)
