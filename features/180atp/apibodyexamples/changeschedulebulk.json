@@ -1,0 +1,61 @@
+[
+    {
+        "id": "id-bike-0001",
+        "organizationId": "usmf",
+        "productId": "Bike",
+        "dimensions": {
+            "SiteId": "1",
+            "LocationId": "11",
+            "ColorId": "Red",
+            "SizeId": "Small"
+        },
+        "quantitiesByDate": {
+            "2023-09-08": {
+                "pos": {
+                    "inbound": 10
+                }
+            }
+        }
+    },
+    {
+        "id": "id-car-0002",
+        "organizationId": "usmf",
+        "productId": "Car",
+        "dimensions": {
+            "SiteId": "1",
+            "LocationId": "11",
+            "ColorId": "Red",
+            "SizeId": "Small"
+        },
+        "quantitiesByDate": {
+            "2023-09-08": {
+                "pos": {
+                    "outbound": 10
+                }
+            }
+        }
+    }
+]
+
+
+{
+    "success": [
+        {
+            "id": "ohcs~id-bike-0001",
+            "processingStatus": "success",
+            "message": "",
+            "statusCode": 200
+        },
+        {
+            "id": "ohcs~id-car-0002",
+            "processingStatus": "success",
+            "message": "",
+            "statusCode": 200
+        }
+    ],
+    "failure": [],
+    "conflict": [],
+    "notFound": [],
+    "partialSuccess": [],
+    "unknown": []
+}
