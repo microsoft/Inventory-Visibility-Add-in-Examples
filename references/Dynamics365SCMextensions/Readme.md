@@ -6,7 +6,9 @@ This is about adding custom fields to Inventory Visibility add-in.
 
 Usage example: A user may want to add customized query patterns to Inventory Visibility Add-in, e.g., a `Yes/No` value associated with each Item ID. This can be done by adding the value as a custom `Dimension` value by writing X++ extensions, and corresponding configurations in Inventory Visibility side.
 
-The field value is required to be unique to each unique `InventSum` record. At most eight (8) different customized fields are supported. 
+The field value is required to be unique to each unique `InventSum` record. At most eight (8) different customized fields are supported. The value being added only changes to the records inside Inventory Visibility Add-in. No record in Dynamics 365 SCM is changed by this approach. 
+
+If the custom values being added is a product attribute, using [Attribute-based product search](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-api#product-search-query) is suggested.
 
 ## Writing extensions
 
@@ -102,4 +104,3 @@ Before deploying the change, user is required to clean all existing data and sta
 ## Finding extension examples. 
 
 You can find a sample code for X++ extension in `IV_Ext_example.axpp` in current folder. 
-
