@@ -10,10 +10,9 @@ The field value is required to be unique to each unique `InventSum` record. At m
 
 If the custom values being added is a product attribute, using [Attribute-based product search](https://learn.microsoft.com/en-us/dynamics365/supply-chain/inventory/inventory-visibility-api#product-search-query) is suggested.
 
-## Writing extensions
+## Extending custom dimension values
 
 The extension is about adding a custom dimension value when data contract is assembled in Dynamics 365 SCM to be sent to Inventory Visibility. It requires two steps: First to add a field to data contract class `InventOnHandChangeEventDimensionSet`, then to assign the dimensions the value you want. 
-
 
 If your item is potentially advanced warehouse management (WMS) enabled, the customization is needed for `InventInventoryDataServiceBatchJobTask.transformWHSInventReserve()` method as well. 
 
@@ -62,11 +61,40 @@ final class InventInventoryDataServiceBatchJobTask_IVExt_Extension
 }
 ```
 
+## Extending custom quantity fields
+
+To add custom quantity field (i.e., a `physical measure` in Inventory Visibility Add-in), similar customization can be applied. In the example below we add a measure called "extendedMeasure1"
+
+```
+[ExtensionOf(classStr(InventOnHandChangeEventDimensionSet))]
+final class InventOnHandChangeEventDimensionSet_IVExt_Extension
+{
+    private real extendedMeasure1;
+
+    [DataMember('extendedMeasure1')]
+    public str parmExtendedDimension1(real _extendedMeasure1 = extendedMeasure1)
+    {
+        extendedMeasure1 = _extendedMeasure1;
+        return extendedMeasure1;
+    }
+}
+```
+
+If the new physical measure is an extension field inside `inventSum`, an extension is needed on method `InventOnHandChangeEventModifiers::buildFromInventSum()`, with the parm method added above; 
+
+If the new physical measure is not an extension field inside `inventSum`, user is required to capture the quantity changes, join them with `InventSum` records and post them to Inventory Visibility. A feasible way is to refer to `InventUpdateOnHandInventoryDataServiceHandler` class and apply similar logics to add data to corresponding `queue tables` when changes occur and needs to be transmitted to Inventory Visibility side. Records in `queue tables` will be picked up by the recurrent batch job connecting to Inventory Visibility, treated as typical data change in `InventSum`.
+
+Join logics vary case-by-case and is not included in this documentation. 
+
+For WMS logics, similar extension is needed for `WHSInventReserve` table as it did for `InventSum`
+
 ## Configuring Inventory Visibility Add-in
 
 The field name is used in later IV queries. If you decide to use field names other than `ExtendedDimensions1~8`, extra configuration is needed in Inventory Visibility add-in. 
 
-A configuration is needed to map the customized dimension field name, if being different, to ExtendedDimensions1~8. In power apps UI, go to `feature management` -> `Data source settings` -> `Manage`, in dimension mappings area, add new dimension record to set `Customer Dimension` to the actual field name in extension code, and base dimension value as one of `ExtendedDimension1~8`
+A configuration is needed to map the customized dimension field name, if being different, to ExtendedDimensions1~8. In power apps UI, go to `feature management` -> `Data source settings` -> `Manage`, in dimension mappings area, add new dimension record to set `Customer Dimension` to the actual field name in extension code, and base dimension value as one of `ExtendedDimension1~8`. 
+
+To include new physical measures, add the measure name with "FnO" data source's physical measures, then update configuration. 
 
 ![Example change](image.png)
 
