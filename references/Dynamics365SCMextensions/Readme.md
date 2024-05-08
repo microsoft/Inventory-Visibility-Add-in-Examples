@@ -63,11 +63,11 @@ final class InventInventoryDataServiceBatchJobTask_IVExt_Extension
 
 ## Extending custom quantity fields
 
-To add custom quantity field (i.e., a `physical measure` in Inventory Visibility Add-in), similar customization can be applied. In the example below we add a measure called "extendedMeasure1"
+To add custom quantity field (i.e., a `physical measure` in Inventory Visibility Add-in), similar customization can be applied to `InventOnHandChangeEventModifiers`. In the example below we add a measure called "extendedMeasure1"
 
 ```
-[ExtensionOf(classStr(InventOnHandChangeEventDimensionSet))]
-final class InventOnHandChangeEventDimensionSet_IVExt_Extension
+[ExtensionOf(classStr(InventOnHandChangeEventModifiers))]
+final class InventOnHandChangeEventModifiers_IVExt_Extension
 {
     private real extendedMeasure1;
 
