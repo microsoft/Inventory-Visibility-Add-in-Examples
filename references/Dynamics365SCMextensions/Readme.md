@@ -72,7 +72,7 @@ final class InventOnHandChangeEventModifiers_IVExt_Extension
     private real extendedMeasure1;
 
     [DataMember('extendedMeasure1')]
-    public str parmExtendedDimension1(real _extendedMeasure1 = extendedMeasure1)
+    public real parmExtendedDimension1(real _extendedMeasure1 = extendedMeasure1)
     {
         extendedMeasure1 = _extendedMeasure1;
         return extendedMeasure1;
