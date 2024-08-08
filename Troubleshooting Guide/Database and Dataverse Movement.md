@@ -129,9 +129,8 @@ While the delete job is executing, actions are blocked from IV Power App UI. Aft
 
 ### I don’t see the option of Delete all inventory data.
 
-Go to Power Platform admin center and find the target environment. Select Dynamics 365 Apps -> Dynamics 365 Inventory Visibility and update.
-
-![Update IV solution](media/update-iv.png)
+Please [update Inventory Visibility Add-in](https://learn.microsoft.com/dynamics365/supply-chain/inventory/inventory-visibility-setup#update-add-in) in your target environment.
+![update IV solution](media/update-IV-solution.png)
 
 ### I didn’t install IV before I copied the Power Platform environment.
 
