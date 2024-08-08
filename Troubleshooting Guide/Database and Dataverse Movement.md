@@ -51,11 +51,14 @@ Suppose that $\color{#388600}{\textsf{FnO environment A}}$ and $\color{#007BB8}{
 | | |
 | -- | ---- |
 | **Endpoint** | Endpoint of $\color{#C00000}{\textsf{environment A’}}$ ([What to do if you don’t have the endpoint](#i-dont-have-the-endpoint-of-target-environment-when-refreshing-the-environment-id-in-iv-configuration)) |
-| **Path** | {/api/environment/\{}$\color{#C00000}{\textsf{FnOEnvironmentIdA’}}${\}/updateEnvIdInConfig} |
+| **Path** | /api/environment/\{FnO_Environment_Id_A’\}/updateEnvIdInConfig |
 | **Method** | Post |
 | **Headers** | Api-Version=1.0 <br> Authorization=Bearer {access_token} <br> Content-Type=application/json |
-| **Query (Url Parameters)** | oldEnvironmentId=\{$\color{#388600}{\textsf{FnOEnvironmentIdA}}$\} |
+| **Query (Url Parameters)** | oldEnvironmentId=\{FnO_Environment_Id_A\} |
 | | |
+
+> [!IMPORTANT] 
+> Please be careful about the two FnOEnvironmentId values. The one in **Path** is the environment id of $\color{#C00000}{\textsf{environment A’}}$. The one in **Query (Url Parameters)** is the environment id of $\color{#388600}{\textsf{environment A}}$.
 
 ![Refresh the environment id in IV configuration](media/update-environment-id-in-config.png)
 
@@ -85,11 +88,14 @@ Suppose that $\color{#388600}{\textsf{FnO environment A}}$ and $\color{#007BB8}{
 | | |
 | -- | ---- |
 | **Endpoint** | Endpoint of $\color{#C00000}{\textsf{environment A’}}$ ([What to do if you don’t have the endpoint](#i-dont-have-the-endpoint-of-target-environment-when-refreshing-the-environment-id-in-iv-configuration)) |
-| **Path** | /api/environment/{$\color{#C00000}{\textsf{FnOEnvironmentIdA’}}$}/updateEnvIdInConfig |
+| **Path** | /api/environment/\{FnO_Environment_Id_A’\}/updateEnvIdInConfig |
 | **Method** | Post |
 | **Headers** | Api-Version=1.0 <br> Authorization=Bearer {access_token} <br> Content-Type=application/json |
-| **Query (Url Parameters)** | oldEnvironmentId={$\color{#388600}{\textsf{FnOEnvironmentIdA}}$} |
+| **Query (Url Parameters)** | oldEnvironmentId=\{FnO_Environment_Id_A\} |
 | | |
+
+> [!IMPORTANT] 
+> Please be careful about the two FnOEnvironmentId values. The one in **Path** is the environment id of $\color{#C00000}{\textsf{environment A’}}$. The one in **Query (Url Parameters)** is the environment id of $\color{#388600}{\textsf{environment A}}$.
 
 ![Refresh the environment id in IV configuration](media/update-environment-id-in-config.png)
 
