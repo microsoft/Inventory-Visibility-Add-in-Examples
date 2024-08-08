@@ -14,9 +14,9 @@ Suppose that $\color{#388600}{\textsf{FnO environment A}}$ and $\color{#007BB8}{
 
 | Movement Operation |
 | :-------: |
-| [Only copy $\color{#388600}{\textsf{A}}$ to $\color{#C00000}{\textsf{A’}}$](#only-copy-fno-database-a-to-database-a) |
-| [Only copy $\color{#007BB8}{\textsf{B}}$ to $\color{#7030A0}{\textsf{B’}}$](#only-copy-power-platform-dataverse-b-to-dataverse-b) |
-| [Copy $\color{#388600}{\textsf{A}}$ to $\color{#C00000}{\textsf{A’}}$ and copy $\color{#007BB8}{\textsf{B}}$ to $\color{#7030A0}{\textsf{B’}}$](#copy-fno-database-a-to-database-a-and-copy-power-platform-dataverse-b-to-dataverse-b) |
+| [Only copy A to A’](#only-copy-fno-database-a-to-database-a) |
+| [Only copy B to B’](#only-copy-power-platform-dataverse-b-to-dataverse-b) |
+| [Copy A to A’ and copy B to B’](#copy-fno-database-a-to-database-a-and-copy-power-platform-dataverse-b-to-dataverse-b) |
 | |
 
 > [!IMPORTANT] 
@@ -51,10 +51,10 @@ Suppose that $\color{#388600}{\textsf{FnO environment A}}$ and $\color{#007BB8}{
 | | |
 | -- | ---- |
 | **Endpoint** | Endpoint of $\color{#C00000}{\textsf{environment A’}}$ ([What to do if you don’t have the endpoint](#i-dont-have-the-endpoint-of-target-environment-when-refreshing-the-environment-id-in-iv-configuration)) |
-| **Path** | /api/environment/{$\color{#C00000}{\textsf{FnOEnvironmentIdA’}}$}/updateEnvIdInConfig |
+| **Path** | /api/environment/\{$\color{#C00000}{\textsf{FnOEnvironmentIdA’}}$\}/updateEnvIdInConfig |
 | **Method** | Post |
 | **Headers** | Api-Version=1.0 <br> Authorization=Bearer {access_token} <br> Content-Type=application/json |
-| **Query (Url Parameters)** | oldEnvironmentId={$\color{#388600}{\textsf{FnOEnvironmentIdA}}$} |
+| **Query (Url Parameters)** | oldEnvironmentId=\{$\color{#388600}{\textsf{FnOEnvironmentIdA}}$\} |
 | | |
 
 ![Refresh the environment id in IV configuration](media/update-environment-id-in-config.png)
