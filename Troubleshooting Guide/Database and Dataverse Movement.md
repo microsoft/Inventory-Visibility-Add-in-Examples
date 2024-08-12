@@ -40,7 +40,7 @@ Suppose that $\color{#388600}{\textsf{FnO environment A}}$ and $\color{#007BB8}{
 
 ![Copy B to B'](media/DB-and-DV-movement-copy-B.bmp)
 
-1. In target $\color{#C00000}{\textsf{environment A’}}$ and $\color{#7030A0}{\textsf{B’}}$, ensure that IV has been installed. This step is for the registration of target environment. ([What to do if you miss this step](#i-didnt-install-iv-before-i-copied-the-power-platform-environment))
+1. In target environment $\color{#C00000}{\textsf{A’}}$ and $\color{#7030A0}{\textsf{B’}}$, ensure that IV has been installed. This step is for the registration of target environment. ([What to do if you miss this step](#i-didnt-install-iv-before-i-copied-the-power-platform-environment))
 
 2. Follow Dataverse guide to copy Power Platform $\color{#007BB8}{\textsf{Dataverse B}}$ to $\color{#7030A0}{\textsf{Dataverse B’}}$.
 
@@ -51,14 +51,14 @@ Suppose that $\color{#388600}{\textsf{FnO environment A}}$ and $\color{#007BB8}{
 | | |
 | -- | ---- |
 | **Endpoint** | Endpoint of $\color{#C00000}{\textsf{environment A’}}$ ([What to do if you don’t have the endpoint](#i-dont-have-the-endpoint-of-target-environment-when-refreshing-the-environment-id-in-iv-configuration)) |
-| **Path** | /api/environment/\{FnO_Environment_Id_A’\}/updateEnvIdInConfig |
+| **Path** | /api/environment/`{FnO_Environment_Id_A’}`/updateEnvIdInConfig |
 | **Method** | Post |
-| **Headers** | Api-Version=1.0 <br> Authorization=Bearer {access_token} <br> Content-Type=application/json |
-| **Query (Url Parameters)** | oldEnvironmentId=\{FnO_Environment_Id_A\} |
+| **Headers** | Api-Version=1.0 <br> Authorization=Bearer `{access_token}` <br> Content-Type=application/json |
+| **Query (Url Parameters)** | oldEnvironmentId=`{FnO_Environment_Id_A}` |
 | | |
 
 > [!IMPORTANT] 
-> Please be careful about the two FnOEnvironmentId values. The one in **Path** is the environment id of $\color{#C00000}{\textsf{environment A’}}$. The one in **Query (Url Parameters)** is the environment id of $\color{#388600}{\textsf{environment A}}$.
+> Please be careful about the two `FnO_Environment_Id` values. The one in **Path** is the environment id of $\color{#C00000}{\textsf{environment A’}}$. The one in **Query (Url Parameters)** is the environment id of $\color{#388600}{\textsf{environment A}}$.
 
 ![Refresh the environment id in IV configuration](media/update-environment-id-in-config.png)
 
@@ -88,14 +88,14 @@ Suppose that $\color{#388600}{\textsf{FnO environment A}}$ and $\color{#007BB8}{
 | | |
 | -- | ---- |
 | **Endpoint** | Endpoint of $\color{#C00000}{\textsf{environment A’}}$ ([What to do if you don’t have the endpoint](#i-dont-have-the-endpoint-of-target-environment-when-refreshing-the-environment-id-in-iv-configuration)) |
-| **Path** | /api/environment/\{FnO_Environment_Id_A’\}/updateEnvIdInConfig |
+| **Path** | /api/environment/`{FnO_Environment_Id_A’}`/updateEnvIdInConfig |
 | **Method** | Post |
-| **Headers** | Api-Version=1.0 <br> Authorization=Bearer {access_token} <br> Content-Type=application/json |
-| **Query (Url Parameters)** | oldEnvironmentId=\{FnO_Environment_Id_A\} |
+| **Headers** | Api-Version=1.0 <br> Authorization=Bearer `{access_token}` <br> Content-Type=application/json |
+| **Query (Url Parameters)** | oldEnvironmentId=`{FnO_Environment_Id_A}` |
 | | |
 
 > [!IMPORTANT] 
-> Please be careful about the two FnOEnvironmentId values. The one in **Path** is the environment id of $\color{#C00000}{\textsf{environment A’}}$. The one in **Query (Url Parameters)** is the environment id of $\color{#388600}{\textsf{environment A}}$.
+> Please be careful about the two `FnO_Environment_Id` values. The one in **Path** is the environment id of $\color{#C00000}{\textsf{environment A’}}$. The one in **Query (Url Parameters)** is the environment id of $\color{#388600}{\textsf{environment A}}$.
 
 ![Refresh the environment id in IV configuration](media/update-environment-id-in-config.png)
 
@@ -142,22 +142,22 @@ Please [update Inventory Visibility Add-in](https://learn.microsoft.com/dynamics
 
 Without installation, the target environment is not registered to IV service, so you would encounter failures in the authentication step. For such cases, please follow the instructions according to your situation.
 
-- if you are able to access LCS page of the target environment, you may [install IV from LCS](https://learn.microsoft.com/dynamics365/supply-chain/inventory/inventory-visibility-setup#install-add-in) with a new application (client) Id, and then you could proceed with the remaining steps.
+- if you are able to access LCS page of the target environment, you may [install IV from LCS](https://learn.microsoft.com/dynamics365/supply-chain/inventory/inventory-visibility-setup#install-the-inventory-visibility-add-in-from-lifecycle-services) with a new application (client) Id, and then you could proceed with the authentication step.
 
 - If you are not able to access LCS page of the target environment (such as a UDE environment), please follow the below steps.
-    1. [Register an application](https://learn.microsoft.com/entra/identity-platform/quickstart-register-app) and [add a client secret](https://learn.microsoft.com/entra/identity-platform/quickstart-register-app#add-a-certificate) to Microsoft Entra under your Azure subscription. Make a note of the **application (client) Id**, **client secret**, and **tenant Id** values.
+    1. [Register an application](https://learn.microsoft.com/entra/identity-platform/quickstart-register-app) and [add a client secret](https://learn.microsoft.com/entra/identity-platform/quickstart-register-app?tabs=certificate#add-credentials) to Microsoft Entra under your Azure subscription. Make a note of the **application (client) Id**, **client secret**, and **tenant Id** values.
     2. Go to Power Platform admin center.
     3. On the left panel, select Resources -> Dynamics 365 apps. Find Dynamics 365 Inventory Visibility in the app list and click Manage.
     ![Manage Resources in PPAC](media/ppac-manage-resources.png)
     4. Select the target environment. Enter the application Id and tenant Id that are registered from Azure portal. Agree to the terms of service and click Install.
     ![Manage IV installation in PPAC](media/ppac-manage-IV-install.png)
-    5. During installation, the status of IV add-in is shown as Installing. After installation completes, the status will change to Installed and you may proceed with the remaining steps.
+    5. During installation, the status of IV add-in is shown as Installing. After installation completes, the status will change to Installed and you may proceed with the authentication step.
 
 ### I don’t have the endpoint of target environment when refreshing the environment id in IV configuration.
 
-Disable the auto-redirection of your client and send the updateEnvIdInConfig request with the endpoint of your source environment.
+Disable the auto-redirection of your client and send the `updateEnvIdInConfig` request with the endpoint of your source environment.
 
 - If the response status is 200, move on with the remaining steps.
 
-- If the response status is 308 (Permanent Redirect), the endpoint of your target environment can be found in the Location field of the response headers. Note that query parameter (oldEnvironmentId) may not be captured in this field. Next, re-send the request with the endpoint of your target environment and the correct query parameter. After receiving a 200 response status, you can move on with the remaining steps.
+- If the response status is 308 (Permanent Redirect), the endpoint of your target environment can be found in the `Location` field of the response headers. Note that query parameter (oldEnvironmentId) may not be captured in this field. Next, re-send the request with the endpoint of your target environment and the correct query parameter. After receiving a 200 response status, you can move on with the remaining steps.
 ![Handle 308 redirect](media/handle-redirect.png)

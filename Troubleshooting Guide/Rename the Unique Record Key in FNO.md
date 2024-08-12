@@ -12,7 +12,7 @@ After the rename operation, corresponding inventory with new key value is not sy
 
 The rename operation is more like a direct SQL DB update rather than a standard inventory update. Hence, IV related logic will not be triggered, and IV will not be notified of this replacement.
 
-After the rename operation, if any standard inventory update is performed on inventory with new key value in FNO, IV batch job is able to capture the change and sync the "new" inventory to IV.
+After the rename operation, if any standard inventory update is performed on inventory with new key value in FNO, IV batch job will be able to capture the standard change and sync the "new" inventory to IV.
 
 Inventory with new key value is completely different inventory from that with old key value. Since all inventory with old key value disappears in FNO, "old" inventory in IV can no longer be touched and updated.
 
