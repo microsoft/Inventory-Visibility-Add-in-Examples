@@ -8,6 +8,8 @@ This repository contains the following examples:
 
 The scope of this repository is to provide and share use cases for Inventory Visibility Add-in. Please contact Microsoft Support directly for production related issues. 
 
+A [troubleshooting list](./Troubleshooting%20Guide/Troubleshooting%20Guide%20Overview.md) for common issues is also maintained in this repository.
+
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
