@@ -159,7 +159,7 @@ Disable the auto-redirection of your client and send the `updateEnvIdInConfig` r
 
 - If the response status is 200, move on with the remaining steps.
 
-- If the response status is 401, contact us via InventVisibilitySupp@microsoft.com. Include your environment ID in the email.
+- If the response status is 401, contact us via InventVisibilitySupp@microsoft.com. Include the environment ID of your target environment in the email.
 
 - If the response status is 308 (Permanent Redirect), the endpoint of your target environment can be found in the `Location` field of the response headers. Note that query parameter (oldEnvironmentId) may not be captured in this field. Next, re-send the request with the endpoint of your target environment and the correct query parameter. After receiving a 200 response status, you can move on with the remaining steps.
 ![Handle 308 redirect](media/handle-redirect.png)
