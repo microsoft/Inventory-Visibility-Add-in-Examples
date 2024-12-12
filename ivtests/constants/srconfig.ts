@@ -203,11 +203,11 @@ export const SRConfig =
                 "@available_to_reserve": 7
             }
         },
-        "version": 1,
+        "version": 2,
         "schedulePeriodInDays": 30,
         "isScheduleEnabled": true,
         "isEnabled": true,
-        "isScheduleV2": false,
+        "isScheduleV2": true,
         "isSetup": true
     },
     "reservConfiguration": {
