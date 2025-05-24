@@ -155,11 +155,11 @@ Without installation, the target environment is not registered to IV service, so
 
 ### I don’t have the endpoint of target environment when refreshing the environment id in IV configuration.
 
-Disable the auto-redirection of your client and send the `updateEnvIdInConfig` request with the endpoint of your source environment.
+**Disable the auto-redirection of your client** and send the `updateEnvIdInConfig` request with the endpoint of your source environment.
 
 - If the response status is 200, move on with the remaining steps.
 
-- If the response status is 401, contact us via InventVisibilitySupp@microsoft.com. Include the environment ID of your target environment in the email.
+- If the response status is 401, check whether you have disabled the auto-redirection of your client. If yes, contact us via InventVisibilitySupp@microsoft.com. Include the environment ID of your target environment in the email.
 
 - If the response status is 308 (Permanent Redirect), the endpoint of your target environment can be found in the `Location` field of the response headers. Note that query parameter (oldEnvironmentId) may not be captured in this field. Next, re-send the request with the endpoint of your target environment and the correct query parameter. After receiving a 200 response status, you can move on with the remaining steps.
 ![Handle 308 redirect](media/handle-redirect.png)
