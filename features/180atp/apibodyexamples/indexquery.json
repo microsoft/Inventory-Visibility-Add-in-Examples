@@ -1,0 +1,110 @@
+{
+    "filters": {
+        "organizationId": [
+            "usmf"
+        ],
+        "productId": [
+            "Bike"
+        ],
+        "SiteId": [
+            "1"
+        ],
+        "LocationId": [
+            "11"
+        ]
+    },
+    "groupByValues": [
+        "ColorId",
+        "SizeId"
+    ],
+    "returnNegative": true,
+    "QueryATP": true,
+    "atpFromDate": "2023-10-01",
+    "atpToDate": "2023-10-10"
+}
+
+[
+    {
+        "quantitiesByDate": {
+            "2023-10-01T00:00:00": {
+                "iv": {
+                    "ordered": 10.0,
+                    "softreserved": 0,
+                    "totalonhand": 10.0,
+                    "availabletoreserve": 10.0
+                },
+                "fno": {
+                    "physicalinvent": 0,
+                    "ordered": 0,
+                    "arrived": 0,
+                    "reservphysical": 0,
+                    "softreserved": 0
+                },
+                "pos": {
+                    "inbound": 0,
+                    "outbound": 0
+                }
+            }
+        },
+        "atpQuantities": {
+            "2023-10-01T00:00:00Z": {
+                "iv": {
+                    "totalonhand": 10.0
+                }
+            },
+            "2023-10-02T00:00:00Z": {
+                "iv": {
+                    "totalonhand": 10.0
+                }
+            },
+            "2023-10-03T00:00:00Z": {
+                "iv": {
+                    "totalonhand": 10.0
+                }
+            },
+            "2023-10-04T00:00:00Z": {
+                "iv": {
+                    "totalonhand": 10.0
+                }
+            },
+            "2023-10-05T00:00:00Z": {
+                "iv": {
+                    "totalonhand": 10.0
+                }
+            },
+            "2023-10-06T00:00:00Z": {
+                "iv": {
+                    "totalonhand": 10.0
+                }
+            },
+            "2023-10-07T00:00:00Z": {
+                "iv": {
+                    "totalonhand": 10.0
+                }
+            },
+            "2023-10-08T00:00:00Z": {
+                "iv": {
+                    "totalonhand": 10.0
+                }
+            },
+            "2023-10-09T00:00:00Z": {
+                "iv": {
+                    "totalonhand": 10.0
+                }
+            },
+            "2023-10-10T00:00:00Z": {
+                "iv": {
+                    "totalonhand": 10.0
+                }
+            }
+        },
+        "productId": "Bike",
+        "dimensions": {
+            "ColorId": "red",
+            "SizeId": "small",
+            "siteid": "1",
+            "locationid": "11"
+        },
+        "quantities": {}
+    }
+]
