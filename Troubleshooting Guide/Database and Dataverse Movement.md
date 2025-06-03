@@ -1,6 +1,6 @@
 # Database and Dataverse Movement
 
-This is an operating guide for Database and Dataverse movement. For scenarios that are not listed in this guide, please contact inventvisibilitysupp@microsoft.com for further support.
+This is an operating guide for Database and Dataverse movement. For scenarios that are not listed in this guide, please open a support ticket for further support.
 
 ## Overview
 
