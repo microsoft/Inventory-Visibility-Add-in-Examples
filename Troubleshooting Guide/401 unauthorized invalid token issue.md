@@ -36,13 +36,9 @@ This page will provide the guide for fixing 401 unauthorized error when posting 
 
 1. Follow the [Inventory Visiblity Authentication](https://learn.microsoft.com/dynamics365/supply-chain/inventory/inventory-visibility-api#inventory-visibility-authentication) to get a valid access token from API client. **Note that you need to first retrieve a Microsoft Entra token and then retrieve an access token.** If you fail to retrieve a valid token, check the below points.
     - Verify that for each token request, you are using just the **same URL** as written in the document. The expected response format is also provided in the document, which is supposed to be perfectly matched.
-    - Sign in to your Azure portal and find the app registration for IV on this environment. Ensure that Client ID and Tenant ID are exactly the values you use when installing IV on this environment. Ensure that Client Secret is not expired.
-    > [!IMPORTANT]
-    > Each environment should have its own app registration and cannot share with another environment. One of the common causes for 401 unauthorized errors is sharing the same app registration between different environments.
+    - Sign in to your Azure portal and find the app registration for IV on this environment. **Note that each environment should have its own app registration and cannot share with another environment. One of the common causes for 401 unauthorized errors is sharing the same app registration between different environments.** Ensure that Client ID and Tenant ID are exactly the values you use when installing IV on this environment. Ensure that Client Secret is not expired.
     - If you are on a Production environment and the abovementioned steps didn't help, open a support case.
     - If you are on a Sandbox environment and the abovementioned steps didn't help, try [uninstall IV](https://learn.microsoft.com/dynamics365/supply-chain/inventory/inventory-visibility-setup#uninstall-add-in) from [LCS](https://lcs.dynamics.com/Logon/Index) and then reinstall IV to unblock yourself. If this environment doesn't have a LCS project, [reinstall IV from PPAC](Reinstall%20IV%20from%20PPAC.md).
-1. Select the Authorization tab, enter the valid **access token** you get from step 1. 
-    > [!IMPORTANT]
-    > **DO NOT** use the Microsoft Entra token.
+1. Select the Authorization tab, enter the valid **access token** you get from step 1. **DO NOT** use the Microsoft Entra token.
 ![Enter bearer token in Postman](media/enter-token-in-postman.png)
 1. Send requests to Inventory visiblity again and check whether the issue has been resolved.
