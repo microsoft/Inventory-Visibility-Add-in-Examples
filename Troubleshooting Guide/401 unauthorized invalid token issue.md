@@ -21,7 +21,7 @@ This page will provide the guide for fixing 401 unauthorized error when posting 
 1. If you cannot get a new token after you click the **Refresh** button, please double check the credential you use and the Environment Id shown in the Settings window.
 
     - If you find the environment Id is incorrect, please verify whether you have performed any [Database and Dataverse Movement](Database%20and%20Dataverse%20Movement.md) operation. Follow the guide or create a support case for further assistance.
-    - If the environment Id is correct, please verify whether you can [get a token from API]((https://learn.microsoft.com/dynamics365/supply-chain/inventory/inventory-visibility-api#inventory-visibility-authentication)). If not, follow the below section [Get 401 unauthorized error in API client](#get-401-unauthorized-error-in-api-client) to try unblock yourself.
+    - If the environment Id is correct, please verify whether you can [get a token from API](https://learn.microsoft.com/dynamics365/supply-chain/inventory/inventory-visibility-api#inventory-visibility-authentication). If not, follow the below section [Get 401 unauthorized error in API client](#get-401-unauthorized-error-in-api-client) to try unblock yourself.
     - Create a support case if you need further assistance.
 
 ## Get 401 unauthorized error in API client
@@ -40,7 +40,7 @@ This page will provide the guide for fixing 401 unauthorized error when posting 
     > [!IMPORTANT]
     > Each environment should have its own app registration and cannot share with another environment. One of the common causes for 401 unauthorized errors is sharing the same app registration between different environments.
     - If you are on a Production environment and the abovementioned steps didn't help, open a support case.
-    - If you are on a Sandbox environment and the abovementioned steps didn't help, try [uninstall IV](https://learn.microsoft.com/dynamics365/supply-chain/inventory/inventory-visibility-setup#uninstall-add-in) from [LCS]((https://lcs.dynamics.com/Logon/Index)) and then reinstall IV to unblock yourself. If this environment doesn't have a LCS project, [reinstall IV from PPAC](Reinstall%20IV%20from%20PPAC.md).
+    - If you are on a Sandbox environment and the abovementioned steps didn't help, try [uninstall IV](https://learn.microsoft.com/dynamics365/supply-chain/inventory/inventory-visibility-setup#uninstall-add-in) from [LCS](https://lcs.dynamics.com/Logon/Index) and then reinstall IV to unblock yourself. If this environment doesn't have a LCS project, [reinstall IV from PPAC](Reinstall%20IV%20from%20PPAC.md).
 1. Select the Authorization tab, enter the valid **access token** you get from step 1. 
     > [!IMPORTANT]
     > **DO NOT** use the Microsoft Entra token.
