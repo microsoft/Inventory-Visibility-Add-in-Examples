@@ -7,7 +7,7 @@ Although app uninstallation from Power Platform admin center is not supported, t
     - If you can't find or don't have the app registration for IV on this environment, [register an new application](https://learn.microsoft.com/entra/identity-platform/quickstart-register-app) and [add a new client secret](https://learn.microsoft.com/entra/identity-platform/how-to-add-credentials?tabs=certificate) to Microsoft Entra under your Azure subscription.
 
 > [!IMPORTANT]
-> Each environment should have its own app registration and cannot share with another environment. Otherwise, you'll see [401 unauthorized errors](401%20unauthorized%20invalid%20token%20issue.md).
+> Each environment should have its own app registration and cannot share with another environment. Otherwise, you'll see [token issues](401%20unauthorized%20invalid%20token%20issue.md).
 
 2. Make a note of the **Application (Client) ID**, **Client Secret**, and **Tenant Id** values.
 
