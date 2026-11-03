@@ -126,6 +126,8 @@ Toubleshooting list:
 
 - [I don’t have the endpoint of target environment when refreshing the environment id in IV configuration.](#i-dont-have-the-endpoint-of-target-environment-when-refreshing-the-environment-id-in-iv-configuration)
 
+- [I use the Transaction feature (Business Layer). What should I do after moving FnO and Dataverse?](#i-use-the-transaction-feature-business-layer-what-should-i-do-after-moving-fno-and-dataverse)
+
 > [!NOTE] 
 > **For further assistance, please raise a support case.**
 
@@ -165,3 +167,21 @@ In most cases, your target environment will continue to use the same endpoint as
 
 - If the response status is 308 (Permanent Redirect), the endpoint of your target environment can be found in the `Location` field of the response headers. Note that query parameter (oldEnvironmentId) may not be captured in this field. Next, re-send the request with the endpoint of your target environment and the correct query parameter. After receiving a 200 response status, you can move on with the remaining steps.
 ![Handle 308 redirect](media/handle-redirect.png)
+
+### I use the Transaction feature (Business Layer). What should I do after moving FnO and Dataverse?
+
+After the environments are moved, the copied Transaction configuration may still contain the stale source FnO URL in both Dataverse and the Inventory Visibility runtime configuration.
+
+After completing `updateEnvIdInConfig`, apply the following steps in the target IV Power App:
+
+1. Turn off the Transaction feature and select **Update Configuration**.
+2. Turn on the Transaction feature and select **Update Configuration** again.
+
+The disabled-to-enabled transition discovers the target FnO URL, updates the Transaction feature configuration, refreshes the runtime configuration, and recreates the Transaction synchronization job.
+
+Verify the following values after the update:
+
+- **Fno Environment URL** points to the target FnO environment.
+- **Fno Adjustment Integration ActivityId** matches the recurring data integration job in the target FnO environment.
+
+If the FnO database and Dataverse were copied together, the recurring job and activity ID are normally copied together, but they should still be verified. If the target FnO environment does not contain the recurring data integration configuration, run **Initialize configuration** from the target FnO environment.
